@@ -1,5 +1,18 @@
 # kaiz
 
+Before all:
+
+```bash
+$ ~ cd local
+$ ~ docker compose -f compose.ollama.yaml up -d
+```
+
+Set environment variables:
+```bash
+export KAIZ_OLLAMA_HOST=...
+export KAIZ_OLLAMA_MODEL=...
+```
+
 To install dependencies:
 
 ```bash
