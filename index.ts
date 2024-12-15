@@ -5,13 +5,13 @@ const prompt: string = args.slice(2).join(' ');
 
 if (!prompt.length) process.exit(0);
 
-const ollamaHost = Bun.env['KAIZ_OLLAMA_HOST'] || 'http://0.0.0.0:11434';
-const ollamaModel = Bun.env['KAIZ_OLLAMA_MODEL'] || 'llama3.2:1b';
+const kaizOllamaHost = Bun.env['KAIZ_OLLAMA_HOST'] || 'http://0.0.0.0:11434';
+const kaizOllamaModel = Bun.env['KAIZ_OLLAMA_MODEL'] || 'llama3.2:1b';
 
 (async () => {
-    const ollama = new Ollama({ host: ollamaHost });
+    const ollama = new Ollama({ host: kaizOllamaHost });    
     const response = await ollama.chat({
-        model: ollamaModel,
+        model: kaizOllamaModel,
         messages: [
             { role: 'user', content: prompt }
         ],
